@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+//Get dependencies from Maven central repository
+repositories {
+    mavenCentral()
+    flatDir {
+       dirs 'lib'
+   }
+    
+}
+
+//Project dependencies
+dependencies {
+	compile name: 'selenium-server-standalone-2.48.2'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+jar {
+    manifest {
+        attributes("Implementation-Title": "Hello World",
+                   "Implementation-Version": version,
+                   'Main-Class': 'com.coveros.hello_world_selenium.SeleniumMain')
+    }
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
+//create a single Jar with all dependencies
+task createJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'com.coveros.hello_world_selenium.SeleniumMain'
+    }
+    baseName = project.name + '-all'
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    with jar
+}
