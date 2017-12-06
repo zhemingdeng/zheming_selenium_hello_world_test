@@ -63,7 +63,7 @@ public class SeleniumMain {
             // ex.printStackTrace();
         }
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
-		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.2.25:4444/wd/hub"), capability);
+		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.2.252:4444/wd/hub"), capability);
 		
 		// And now use this to visit the app
         driver.get("http://" +DNS+":8080/hello-world-"+ appVersion + "/");
