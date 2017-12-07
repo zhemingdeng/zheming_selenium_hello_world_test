@@ -34,7 +34,7 @@ jar {
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
 //create a single Jar with all dependencies
-task createJar(type: Jar) {
+task createJar(type: Wrapper) {
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',  
         	'Implementation-Version': version,
