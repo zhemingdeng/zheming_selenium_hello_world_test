@@ -33,8 +33,14 @@ jar {
     }
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
+
+//
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
+
 //create a single Jar with all dependencies
-task createJar(type: Wrapper) {
+task createJar(type: Jar) {
 	manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',  
         	'Implementation-Version': version,
