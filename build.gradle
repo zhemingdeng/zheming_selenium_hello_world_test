@@ -29,7 +29,7 @@ jar {
     manifest {
         attributes("Implementation-Title": "Hello World",
                    "Implementation-Version": version,
-                   'Main-Class': 'com.coveros.hello_world_selenium.SeleniumMain')
+                   'Main-Class': 'com.coveros.selenium_hello_world.SeleniumMain')
     }
     from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
