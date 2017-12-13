@@ -42,8 +42,8 @@ public class SeleniumMain {
                 new BufferedReader(fileReader);
 
             while((line = bufferedReader.readLine()) != null) {
-                if (line.contains("Public DNS Name")){
-                	DNS=line.substring(17);
+                if (line.contains("172.31")){
+                	DNS=line;
                 }
             }   
 
