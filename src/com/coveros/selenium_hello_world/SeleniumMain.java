@@ -46,7 +46,7 @@ public class SeleniumMain {
                 	DNS=line;
                 }
             }   
-
+            System.out.println("Destination DNS: "+DNS);
             // Always close files.
             bufferedReader.close();         
         }
