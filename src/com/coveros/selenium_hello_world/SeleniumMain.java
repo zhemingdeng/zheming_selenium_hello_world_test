@@ -63,11 +63,18 @@ public class SeleniumMain {
             // Or we could just do this: 
             // ex.printStackTrace();
         }*/
+		System.out.println("Start to set the firefox");
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
+		System.out.println("Finished setting the firefox");
+		
+		System.out.println("Start to set the WebDriver");
 		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.2.252:4444/wd/hub"), capability);
+		System.out.println("Finished setting the WebDriver");
 		
 		// And now use this to visit the app
+		System.out.println("Start to retrive data from WebDriver");
         driver.get("http://" +DNS+":8080/hello-world-"+ appVersion + "/");
+        System.out.println("Finished retriving data from WebDriver");
 
         // Find the text input element by its name
         WebElement element = driver.findElement(By.tagName("h2"));
