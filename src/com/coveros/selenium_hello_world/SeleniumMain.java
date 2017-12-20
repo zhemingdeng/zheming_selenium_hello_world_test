@@ -23,13 +23,14 @@ public class SeleniumMain {
 		String DNS="";
 		String appVersion="";
 		if (args[0]!=null && args[1]!=null){
-			fileName=args[0];
+			DNS=args[0];
 			appVersion=args[1];
+			System.out.println("DNS: "+DNS);
 		}else{
 			System.out.println("Missing file name! [filename] [hello_world_app_version]");
 			System.exit(1);
 		}
-		try {
+		/*try {
             // FileReader reads text files in the default encoding.
             FileReader fileReader = 
                 new FileReader(fileName);
@@ -61,7 +62,7 @@ public class SeleniumMain {
                 + fileName + "'");                  
             // Or we could just do this: 
             // ex.printStackTrace();
-        }
+        }*/
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
 		WebDriver driver = new RemoteWebDriver(new URL("http://172.31.2.252:4444/wd/hub"), capability);
 		
