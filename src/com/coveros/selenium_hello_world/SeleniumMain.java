@@ -19,7 +19,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class SeleniumMain {
 
 	public static void main(String[] args) throws MalformedURLException {
-		String fileName="";
+		//String fileName="";
 		String DNS="";
 		String appVersion="";
 		if (args[0]!=null && args[1]!=null){
@@ -27,7 +27,7 @@ public class SeleniumMain {
 			appVersion=args[1];
 			System.out.println("DNS: "+DNS);
 		}else{
-			System.out.println("Missing file name! [filename] [hello_world_app_version]");
+			System.out.println("Missing DNS! [DNS] [hello_world_app_version]");
 			System.exit(1);
 		}
 		/*try {
