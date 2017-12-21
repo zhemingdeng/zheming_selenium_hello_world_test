@@ -15,7 +15,7 @@ repositories {
 
 //Project dependencies
 dependencies {
-	compile name: 'selenium-server-standalone-2.48.2'
+	compile name: 'selenium-server-standalone-3.8.1'
 }
 
 sourceSets {
