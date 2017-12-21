@@ -67,6 +67,7 @@ public class SeleniumMain {
 		
 		System.out.println("Start to set the firefox");
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
+		capability.setCapability("marionette", true);
 		System.out.println("Finished setting the firefox");
 		
 		System.out.println("Start to set the WebDriver");
