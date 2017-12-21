@@ -63,6 +63,8 @@ public class SeleniumMain {
             // Or we could just do this: 
             // ex.printStackTrace();
         }*/
+		System.setProperty("webdriver.gecko.driver","/usr/local/bin/geckodriver");
+		
 		System.out.println("Start to set the firefox");
 		DesiredCapabilities capability = DesiredCapabilities.firefox();
 		System.out.println("Finished setting the firefox");
